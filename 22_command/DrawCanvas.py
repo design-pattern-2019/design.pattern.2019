@@ -3,10 +3,6 @@ from MacroCommand import MacroCommand
 from Drawable import Drawable
 from tkinter import *
 
-# Test用
-from Point import Point
-from DrawCommand import DrawCommand
-
 class DrawCanvas(Canvas, Drawable):
     def __init__(self, parent, width: int, height: int, history: MacroCommand):
         # Canvasの初期化

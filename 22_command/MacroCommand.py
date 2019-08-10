@@ -1,7 +1,9 @@
 from Command import Command
 
 class MacroCommand(Command):
-    __commands = []
+    def __init__(self):
+        self.__commands = []
+
     def execute(self) -> None:
         for cmd in self.__commands:
             cmd.execute()
