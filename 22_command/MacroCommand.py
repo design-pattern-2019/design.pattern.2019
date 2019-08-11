@@ -13,7 +13,7 @@ class MacroCommand(Command):
             self.__commands.append(cmd)
 
     def undo(self) -> None:
-        if (not self.commands):
+        if (self.__commands):
             self.__commands.pop()
 
     def clear(self) -> None:

@@ -7,13 +7,18 @@ class DrawCanvas(Canvas, Drawable):
     def __init__(self, parent, width: int, height: int, history: MacroCommand):
         # Canvasの初期化
         Canvas.__init__(self, parent, width=width, height=height, bg="#fff")
-        self.color = '#f00'
-        self.radius = 6
-        self.history = history
+        self.__color = '#f00'
+        self.__radius = 6
+        self.__history = history
 
     def paint(self) -> None:
-        self.history.execute()
+        self.__history.execute()
 
     def draw(self, x: int, y: int) -> None:
         # 面積 radius * 2 * 3.14 の円を作る
-        self.create_oval(x - self.radius, y - self.radius, x + self.radius, y + self.radius, fill=self.color, outline="")
+        self.create_oval(
+            x - self.__radius, y - self.__radius,
+            x + self.__radius, y + self.__radius,
+            fill=self.__color,
+            outline=""
+        )
