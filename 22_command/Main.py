@@ -24,12 +24,12 @@ class Main(Tk):
         self.__button.pack()
 
         # 操作系の設定
-        self.__canvas.bind("<B1-Motion>", self.mouseMoveWithHoldDownRightClick)
+        self.__canvas.bind("<B1-Motion>", self.mouseMoveWithHoldDownLeftClick)
         self.__button.bind("<1>", self.onClickClearButton)
 
         self.mainloop()
 
-    def mouseMoveWithHoldDownRightClick(self, e) -> None:
+    def mouseMoveWithHoldDownLeftClick(self, e) -> None:
         cmd = DrawCommand(self.__canvas, Point(e.x, e.y))
         self.__history.append(cmd)
         cmd.execute()
