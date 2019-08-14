@@ -11,7 +11,8 @@ class DrawCanvas(Canvas, Drawable):
         self.__radius = 6
         self.__history = history
 
-    def paint(self) -> None:
+    def repaint(self) -> None:
+        self.delete("all")
         self.__history.execute()
 
     def draw(self, x: int, y: int) -> None:
