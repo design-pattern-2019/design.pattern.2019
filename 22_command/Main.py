@@ -36,7 +36,7 @@ class Main(Tk):
 
     def onClickClearButton(self, e) -> None:
         self.__history.clear()
-        self.__canvas.delete("all")
+        self.__canvas.repaint()
 
 if __name__ == '__main__':
     Main("お絵かき")
